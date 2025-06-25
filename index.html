@@ -7,11 +7,18 @@
 </head>
 <body>
     <input type="button" value="button" id="mybtn">
+    <span id="test1"></span>
 
     <script>
         function butotnClick(){
-            let check = confirm('他のサイトへ移動します。よろしいですか？');
-            console.log(check);
+            let check = confirm('サンプルダイアログです。');
+            var x = document.getElementById("test1");
+            if (check == true) {
+                x.innerHTML = "OK";
+            }
+            else {
+                x.innerHTML = "キャンセル";
+            }
         }
         let button = document.getElementById('mybtn');
         button.addEventListener('click', butotnClick);
