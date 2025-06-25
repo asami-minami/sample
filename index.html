@@ -4,12 +4,71 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+
+    <!-- ダイアログのスタイル -->
+    <style>
+        dialog {
+            font-size: 30px;
+            font-weight: bold;
+            font-family: sans-serif;
+            padding: 80px 30px;
+            box-shadow: gray 2px 2px 5px 2px;
+            border: none;
+            border-radius: 20px;
+        }
+    </style>
 </head>
 <body>
-    <input type="button" value="button" id="mybtn"><br>
+    <button class="openDialog">ダイアログを開く</button>
+    <!-- ダイアログ -->
+    <dialog class="dialogDemo">
+        ダイアログサンプル
+        <br>
+        <!-- OKボタン -->
+        <button class="ok">OK</button>
+        <!-- キャンセルボタン -->
+        <button class="cancel">cancel</button>
+    </dialog>
+
+    <br>
     <span id="test1"></span>
 
     <script>
+        // ダイアログを開くボタン
+        const openBtn = document.querySelector('.openDialog');
+        // ダイアログ
+        const dialogDemo = document.querySelector('.dialogDemo');
+        // OKボタン
+        const okBtn = document.querySelector('.ok');
+        // キャンセルボタン
+        const cancelBtn = document.querySelector('.cancel');
+
+        // テキスト取得
+        var x = document.getElementById("test1");
+
+        // ダイアログを開くボタンがクリック
+        openBtn.addEventListener('click', () => {
+            // ダイアログを開く
+            dialogDemo.showModal();
+        });
+
+        // OKボタンをクリック
+        okBtn.addEventListener('click', () => {
+            // テキストをOKに変更
+            x.innerHTML = "OK";
+            // ダイアログを閉じる
+            dialogDemo.close();
+        });
+
+        // キャンセルボタンをクリック
+        cancelBtn.addEventListener('click', () => {
+            // テキストをキャンセルに変更
+            x.innerHTML = "キャンセル";
+            // ダイアログを閉じる
+            dialogDemo.close();
+        });
+
+        /*
         // ダイアログ表示
         function butotnClick(){
             let check = confirm('サンプルダイアログです。');
@@ -30,6 +89,8 @@
         }
         let button = document.getElementById('mybtn');
         button.addEventListener('click', butotnClick);
+        */
+
     </script>
 </body>
 </html>
