@@ -6,6 +6,15 @@
     <title>Document</title>
 </head>
 <body>
-    Hello World
+    <input type="button" value="button" id="mybtn">
+
+    <script>
+        function butotnClick(){
+            let check = confirm('他のサイトへ移動します。よろしいですか？');
+            console.log(check);
+        }
+        let button = document.getElementById('mybtn');
+        button.addEventListener('click', butotnClick);
+    </script>
 </body>
 </html>
