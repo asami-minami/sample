@@ -58,6 +58,10 @@
             x.innerHTML = "OK";
             // ダイアログを閉じる
             dialogDemo.close();
+            // WebViewへ通知
+            if (window.webkit && window.webkit.messageHandlers && window.webkit.messageHandlers.iosListener) {
+                window.webkit.messageHandlers.iosListener.postMessage(x.innerHTML);
+            }
         });
 
         // キャンセルボタンをクリック
@@ -66,6 +70,10 @@
             x.innerHTML = "キャンセル";
             // ダイアログを閉じる
             dialogDemo.close();
+            // WebViewへ通知
+            if (window.webkit && window.webkit.messageHandlers && window.webkit.messageHandlers.iosListener) {
+                window.webkit.messageHandlers.iosListener.postMessage(x.innerHTML);
+            }
         });
 
         /*
