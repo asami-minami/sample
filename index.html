@@ -59,9 +59,7 @@
             // ダイアログを閉じる
             dialogDemo.close();
             // WebViewへ通知
-            if (window.webkit && window.webkit.messageHandlers && window.webkit.messageHandlers.iosListener) {
-                window.webkit.messageHandlers.iosListener.postMessage(x.innerHTML);
-            }
+            window.webkit.messageHandlers.ToApp.postMessage('OK')
         });
 
         // キャンセルボタンをクリック
@@ -71,34 +69,8 @@
             // ダイアログを閉じる
             dialogDemo.close();
             // WebViewへ通知
-            if (window.webkit && window.webkit.messageHandlers && window.webkit.messageHandlers.iosListener) {
-                window.webkit.messageHandlers.iosListener.postMessage(x.innerHTML);
-            }
+            window.webkit.messageHandlers.ToApp.postMessage('Cancel')
         });
-
-        /*
-        // ダイアログ表示
-        function butotnClick(){
-            let check = confirm('サンプルダイアログです。');
-            var x = document.getElementById("test1");
-            if (check == true) {
-                // テキストをOKに変更
-                x.innerHTML = "OK";
-            }
-            else {
-                // テキストをキャンセルに変更
-                x.innerHTML = "キャンセル";
-            }
-
-            // WebViewへ通知
-            if (window.webkit && window.webkit.messageHandlers && window.webkit.messageHandlers.iosListener) {
-                window.webkit.messageHandlers.iosListener.postMessage(x.innerHTML);
-            }
-        }
-        let button = document.getElementById('mybtn');
-        button.addEventListener('click', butotnClick);
-        */
-
     </script>
 </body>
 </html>
