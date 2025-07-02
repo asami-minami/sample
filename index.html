@@ -38,6 +38,8 @@
     <button type="button" id="btn1">色変更</button>
     <br>
     <span id="test2">swift側からイベントを受け取る</span>
+    <br>
+    <span id="test3"></span>
 
     <script>
         // ダイアログを開くボタン
@@ -87,13 +89,17 @@
 
         window.hoge = function(btn) {
             // テキストの色を変更
-            var y = document.getElementById("test2");
+            //var y = document.getElementById("test2");
             //if ( window.getComputedStyle(y, '').color == "black" ) {
-                y.style.color = "red";
+            //    y.style.color = "red";
             //}
             //else {
             //    y.style.color = "black";
             //}
+            // テキスト取得
+            var z = document.getElementById("test3");
+            // テキスト変更
+            z.innerHTML = btn;
         }
     </script>
 </body>
