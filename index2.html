@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="jp">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+</head>
+<body>
+    <button type="button" id="btn1">色変更</button>
+    <br>
+    <span id="test2">swift側からイベントを受け取る</span>
+
+    <script>
+        // 色変更ボタンをクリック
+        document.getElementById("btn1").addEventListener("click", (e) => {
+            // WebViewへ通知
+            window.webkit.messageHandlers.ChgApp.postMessage('ChgBtn');
+        });
+
+        window.hoge = function(btn) {
+            // テキストの色を変更
+            var y = document.getElementById("test2");
+            if ( window.getComputedStyle(y, '').color == "black" ) {
+                y.style.color = "red";
+            }
+            else {
+                y.style.color = "black";
+            }
+        }
+    </script>
+</body>
+</html>
