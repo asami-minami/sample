@@ -15,7 +15,7 @@
         // 色変更ボタンをクリック
         document.getElementById("btn1").addEventListener("click", (e) => {
             // WebViewへ通知
-            window.webkit.messageHandlers.ChgApp.postMessage('ChgBtn');
+            window.webkit.messageHandlers.ToApp.postMessage('ChgBtn');
         });
 
         window.hoge = function(btn) {
