@@ -87,7 +87,16 @@
             console.log('change click');
         });
 
-        window.hoge = function(btn) {
+        function callFromNative(value) {
+            //var element = document.getElementById("rechieveData");
+            //element.value = value;
+            // テキスト取得
+            var z = document.getElementById("test3");
+            // テキスト変更
+            z.innerHTML = value;
+        }
+
+        //window.hoge = function(btn) {
             // テキストの色を変更
             //var y = document.getElementById("test2");
             //if ( window.getComputedStyle(y, '').color == "black" ) {
@@ -97,10 +106,10 @@
             //    y.style.color = "black";
             //}
             // テキスト取得
-            var z = document.getElementById("test3");
+            //var z = document.getElementById("test3");
             // テキスト変更
-            z.innerHTML = btn;
-        }
+            //z.innerHTML = btn;
+        //}
     </script>
 </body>
 </html>
