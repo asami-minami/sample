@@ -79,10 +79,10 @@
         });
 
         // 色変更ボタンをクリック
-        document.getElementById("btn1").addEventListener("click", (e) => {
+        document.getElementById("btn1").addEventListener('click', (e) => {
             // WebViewへ通知
             window.webkit.messageHandlers.ToApp.postMessage('change');
-            console.log('change click')
+            console.log('change click');
         });
 
         window.hoge = function(btn) {
