@@ -65,7 +65,7 @@
             // ダイアログを閉じる
             dialogDemo.close();
             // WebViewへ通知
-            window.webkit.messageHandlers.ToApp.postMessage('OK')
+            window.webkit.messageHandlers.ToApp.postMessage('OK');
         });
 
         // キャンセルボタンをクリック
@@ -75,23 +75,24 @@
             // ダイアログを閉じる
             dialogDemo.close();
             // WebViewへ通知
-            window.webkit.messageHandlers.ToApp.postMessage('Cancel')
+            window.webkit.messageHandlers.ToApp.postMessage('Cancel');
         });
 
         // 色変更ボタンをクリック
         document.getElementById("btn1").addEventListener("click", (e) => {
             // WebViewへ通知
-            window.webkit.messageHandlers.ChgApp.postMessage('ChgBtn')
+            //window.webkit.messageHandlers.ChgApp.postMessage('ChgBtn');
+            alert("Hello!");
         });
 
         window.hoge = function(btn) {
             // テキストの色を変更
             var y = document.getElementById("test2");
             if ( window.getComputedStyle(y, '').color == "black" ) {
-                y.style.color = "red"
+                y.style.color = "red";
             }
             else {
-                y.style.color = "black"
+                y.style.color = "black";
             }
         }
     </script>
