@@ -33,6 +33,11 @@
     <br>
     <span id="test1"></span>
 
+    <br>
+    <br>
+    <button type="button" id="btn1">色変更</button>
+    <span id="test2">swift側からイベントを受け取る</span>
+
     <script>
         // ダイアログを開くボタン
         const openBtn = document.querySelector('.openDialog');
@@ -71,6 +76,23 @@
             // WebViewへ通知
             window.webkit.messageHandlers.ToApp.postMessage('Cancel')
         });
+
+        // 色変更ボタンをクリック
+        document.getElementById("my-button").addEventListener("click", (e) => {
+            // WebViewへ通知
+            window.webkit.messageHandlers.ToApp.postMessage('ChgBtn')
+        });
+
+        window.hoge = function(btn) {
+            // テキストの色を変更
+            var y = document.getElementById("test2");
+            if ( window.getComputedStyle(y, '').color == "black" ) {
+                y.style.color = "red"
+            }
+            else {
+                y.style.color = "black"
+            }
+        }
     </script>
 </body>
 </html>
