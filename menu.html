@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="jp">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+      body {
+        background-color: lightblue; /* 背景色をlightblueに */
+      }
+    </style>
+</head>
+<body>
+  <button type="button" id="list_btn">通知一覧画面</button>
+  <br>
+  <br>
+  <button type="button" id="setting_btn">通知設定画面</button>
+  <br>
+  <br>
+  <button type="button" id="logout_btn">ログアウト</button>
+
+  <script>
+    // ログアウトボタン押下
+    document.getElementById("logout_btn").addEventListener('click', (e) => {
+            // データ生成
+            var object = {
+                "CD_ACTION": "99"
+            }
+            // WebViewへ通知
+            window.webkit.messageHandlers.ToApp.postMessage(object);
+        });
+
+    // 通知一覧画面ボタン押下
+    document.getElementById("list_btn").addEventListener('click', (e) => {
+            // 通知一覧画面へ遷移
+            window.location.href = 'list.html';
+        });
+
+    // 通知設定画面ボタン押下
+    document.getElementById("setting_btn").addEventListener('click', (e) => {
+            // 通知設定画面へ遷移
+            window.location.href = 'setting.html';
+        });
+  </script>
+  
+</body>
+</html>
