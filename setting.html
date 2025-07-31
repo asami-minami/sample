@@ -20,6 +20,9 @@
   <br>
   <br>
   <button type="button" id="logout_btn">ログアウト</button>
+    <br>
+  <br>
+  <button type="button" id="update_btn">アップデート</button>
 <script>
     // 戻るボタン押下
     document.getElementById("back_btn").addEventListener('click', (e) => {
@@ -32,6 +35,16 @@
             // データ生成
             var object = {
                 "CD_ACTION": "99"
+            }
+            // WebViewへ通知
+            window.webkit.messageHandlers.ToApp.postMessage(object);
+        });
+
+    // アップデートボタン押下
+    document.getElementById("update_btn").addEventListener('click', (e) => {
+            // データ生成
+            var object = {
+                "CD_ACTION": "25"
             }
             // WebViewへ通知
             window.webkit.messageHandlers.ToApp.postMessage(object);
