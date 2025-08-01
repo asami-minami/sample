@@ -54,8 +54,47 @@
     document.getElementById("send_btn").addEventListener('click', (e) => {
             // データ生成
             var object = {
-                "CD_ACTION" : "06",
-                "SORT_INFO": [ "呈茶", "車両進捗", "メモ", "ご用命", "eケア" ]
+                //"CD_ACTION" : "06",
+                //"SORT_INFO": [ "呈茶", "車両進捗", "メモ", "ご用命", "eケア" ]
+                "CD_ACTION" : "01"
+                "STEP_INFO": [
+                    [
+                        "CD_PROCESS": "01",
+                        "KJ_PROCESS": "お出迎え",
+                        "NO_DISPODR": "1",
+                        "FL_NOTI": "1",
+                        "FL_SELECT" : "1",
+                        "FL_OWNASGONLY" : "0",
+                        "FL_REFERENCE" : "1",
+                        "NO_REFERENCE" : "10",
+                        "NO_SENDOFF" : "10",
+                        "FL_SERVICE" : "0"
+                    ],
+                    [
+                        "CD_PROCESS": "02",
+                        "KJ_PROCESS": "お見送り",
+                        "NO_DISPODR": "2",
+                        "FL_NOTI": "1",
+                        "FL_SELECT" : "1",
+                        "FL_OWNASGONLY" : "0",
+                        "FL_REFERENCE" : "1",
+                        "NO_REFERENCE" : "10",
+                        "NO_SENDOFF" : "10",
+                        "FL_SERVICE" : "0"
+                    ],
+                    [
+                        "CD_PROCESS": "03",
+                        "KJ_PROCESS": "店内移動通知",
+                        "NO_DISPODR": "3",
+                        "FL_NOTI": "1",
+                        "FL_SELECT" : "1",
+                        "FL_OWNASGONLY" : "0",
+                        "FL_REFERENCE" : "1",
+                        "NO_REFERENCE" : "10",
+                        "NO_SENDOFF" : "10",
+                        "FL_SERVICE" : "0"
+                    ]
+                ]
             }
             // WebViewへ通知
             window.webkit.messageHandlers.ToApp.postMessage(object);
