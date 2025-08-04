@@ -19,6 +19,9 @@
   <button type="button" id="send_btn">送信</button>
   <br>
   <br>
+  <button type="button" id="send_2_btn">送信2</button>
+  <br>
+  <br>
   <button type="button" id="logout_btn">ログアウト</button>
     <br>
   <br>
@@ -50,15 +53,26 @@
             window.webkit.messageHandlers.ToApp.postMessage(object);
         });
 
-  // 送信ボタン押下
-    document.getElementById("send_btn").addEventListener('click', (e) => {
-            // データ生成
+    // 送信2ボタン押下
+    document.getElementById("send_2_btn").addEventListener('click', (e) => {
+        // データ生成
             var object = {
                 "CD_ACTION" : "08",
                 "CD_PROCESS" : "01",
                 "FL_NOTI" : "1"
+            }
+        // WebViewへ通知
+            window.webkit.messageHandlers.ToApp.postMessage(object);
+    });
+
+  // 送信ボタン押下
+    document.getElementById("send_btn").addEventListener('click', (e) => {
+            // データ生成
+            var object = {
+                //"CD_ACTION" : "08",
+                //"CD_PROCESS" : "01",
+                //"FL_NOTI" : "1"
                 //"SORT_INFO": [ "呈茶", "車両進捗", "メモ", "ご用命", "eケア" ]
-                /*
                 "CD_ACTION" : "01",
                 "STEP_INFO": [
                 {
@@ -98,7 +112,6 @@
                         "FL_SERVICE" : "0"
                 }
                 ]
-                */
             }
             // WebViewへ通知
             window.webkit.messageHandlers.ToApp.postMessage(object);
