@@ -54,8 +54,11 @@
     document.getElementById("send_btn").addEventListener('click', (e) => {
             // データ生成
             var object = {
-                //"CD_ACTION" : "06",
+                "CD_ACTION" : "08",
+                "CD_PROCESS" : "01",
+                "FL_NOTI" : "1"
                 //"SORT_INFO": [ "呈茶", "車両進捗", "メモ", "ご用命", "eケア" ]
+                /*
                 "CD_ACTION" : "01",
                 "STEP_INFO": [
                 {
@@ -95,6 +98,7 @@
                         "FL_SERVICE" : "0"
                 }
                 ]
+                */
             }
             // WebViewへ通知
             window.webkit.messageHandlers.ToApp.postMessage(object);
